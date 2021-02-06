@@ -268,7 +268,7 @@ void oneeight(vector<vector<int>> matrix){
 
 void onenine(string s1, string s2){
 
-	
+
 
 	cout << "Rotation!\n";
 }
@@ -277,13 +277,13 @@ int main(){
 
 	// oneone("manic");
 	// onetwo("abc", "cba");
-	// onethree("      ree kid     ");
+	// onethree("      Hello Worl d     ");
 	// onefour("c arec ra");
 	// onefive("pale", "bake");
 	// onesix("aaccccbabbbbbccc");
 	// oneseven({{'a','b','c'}, {'d','e','f'}, {'g','h','i'}});
 	// oneeight({{ 1, 2, 3, 9}, { 4, 0, 5, 6 }, { 7, 8, 9, 4 }});
-	onenine("waterbottle", "erbottlewat");
+	// onenine("waterbottle", "erbottlewat");
 
 	return 0;
 }
