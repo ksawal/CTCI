@@ -209,8 +209,8 @@ void onesix(string s){
 	cout << curr_char << curr_amt << endl;
 }
 
-void oneseven(vector<vector<char>> matrix){
-	vector<vector<char>> rotated = matrix;
+void oneseven(vector<vector<char> > matrix){
+	vector<vector<char> > rotated = matrix;
 	int N = matrix.size();
 	
 	for(int i = 0; i < N; ++i){
@@ -228,7 +228,7 @@ void oneseven(vector<vector<char>> matrix){
 	}
 }
 
-void oneeight(vector<vector<int>> matrix){
+void oneeight(vector<vector<int> > matrix){
 	set<int> rows;
 	set<int> cols;
 	int M = matrix.size();
@@ -267,23 +267,67 @@ void oneeight(vector<vector<int>> matrix){
 }
 
 void onenine(string s1, string s2){
-
-
-
-	cout << "Rotation!\n";
+	if(s1.length() == s2.length()){
+		for(size_t i = 0; i < s1.length(); ++i){
+			if(s1 == s2){
+				cout << "Rotation!\n";
+				return;
+			}
+			string new_front = "";
+			new_front.push_back(*(s2.end()-1));
+			string rest = s2.substr(0,s2.length()-1);
+			s2 = new_front+rest;
+		}
+	}
+	cout << "Not a Rotation!\n";
 }
 
 int main(){
 
-	// oneone("manic");
-	// onetwo("abc", "cba");
-	// onethree("      Hello Worl d     ");
-	// onefour("c arec ra");
-	// onefive("pale", "bake");
-	// onesix("aaccccbabbbbbccc");
-	// oneseven({{'a','b','c'}, {'d','e','f'}, {'g','h','i'}});
-	// oneeight({{ 1, 2, 3, 9}, { 4, 0, 5, 6 }, { 7, 8, 9, 4 }});
-	// onenine("waterbottle", "erbottlewat");
+	cout << "1.1: "; oneone("manic");
+	cout << "1.2: "; onetwo("abc", "cba");
+	cout << "1.3: "; onethree("      Hello Worl d     ");
+	cout << "1.4: "; onefour("c arec ra");
+	cout << "1.5: "; onefive("pale", "bake");
+	cout << "1.6: "; onesix("aaccccbabbbbbccc");
+ 	vector<vector<char> > chars;
+	vector<char> ch1;
+	vector<char> ch2;
+	vector<char> ch3;
+	ch1.push_back('a');
+	ch1.push_back('b');
+	ch1.push_back('c');
+	ch2.push_back('d');
+	ch2.push_back('e');
+	ch2.push_back('f');
+	ch3.push_back('g');
+	ch3.push_back('h');
+	ch3.push_back('i');
+	chars.push_back(ch1);
+	chars.push_back(ch2);
+	chars.push_back(ch3);
+ 	cout << "1.7: \n"; oneseven(chars);
+	vector<vector<int> > nums;
+	vector<int> n1;
+	vector<int> n2;
+	vector<int> n3;
+	n1.push_back(1);
+	n1.push_back(2);
+	n1.push_back(3);
+	n1.push_back(9);
+	n2.push_back(4);
+	n2.push_back(0);
+	n2.push_back(5);
+	n2.push_back(6);
+	n3.push_back(7);
+	n3.push_back(8);
+	n3.push_back(9);
+	n3.push_back(4);
+	nums.push_back(n1);
+	nums.push_back(n2);
+	nums.push_back(n3);
+	cout << "1.8: \n"; oneeight(nums);
+	cout << "1.9: "; onenine("waterbottle", "erbottlewat");
 
 	return 0;
 }
